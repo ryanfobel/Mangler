@@ -69,7 +69,7 @@ public class Mangler implements Tool {
 
 
   protected void mangleSelection() {
-    if (editor.isSelectionActive()) {
+    //if (editor.isSelectionActive()) {
       String selection = editor.getSelectedText();
       char[] stuff = selection.toCharArray();
       // Randomly swap a bunch of characters in the text
@@ -82,13 +82,13 @@ public class Mangler implements Tool {
         stuff[a] = selection.charAt(b);
         stuff[b] = selection.charAt(a);
       }
-      editor.startCompoundEdit();
+      //editor.startCompoundEdit();
       editor.setSelectedText(new String(stuff));
-      editor.stopCompoundEdit();
+      //editor.stopCompoundEdit();
       editor.statusNotice("Now that feels better, doesn't it?");
 
-    } else {
+    /*} else {
       editor.statusError("No selection, no dice.");
-    }
+    }*/
   }
 }
